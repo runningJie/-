@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "navigation/navigation_bus/navigation",
+    "pages/collection/collection",
+    "pages/weather/weather",
+    "pages/lineDetials/lineDetials"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#0082DC",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "附近线路",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+	"tabBar": {
+    "list": [
+      {
+      "pagePath": "pages/index/index",
+      "text": "附近",
+      "iconPath": "./img/location.png",
+      "selectedIconPath": "./img/location-selected.png"
+      },
+      {
+
+        "pagePath": "pages/search/search",
+        "text": "路线",
+        "iconPath": "./img/lineplan.png",
+        "selectedIconPath": "./img/lineplan-selected.png"
+      },
+      {
+        "pagePath": "pages/weather/weather",
+        "text": "天气",
+        "iconPath": "./img/whether.png",
+        "selectedIconPath": "./img/whether_active.png"
+      },
+      {
+        "pagePath": "pages/collection/collection",
+        "text": "收藏",
+        "iconPath": "./img/collection.png",
+        "selectedIconPath": "./img/collection-selected.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+
+  }
+}

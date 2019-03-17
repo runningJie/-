@@ -1,0 +1,96 @@
+
+.top .up {
+  overflow: hidden;
+}
+.top .up .head {
+  margin: 40rpx 0 10rpx 40rpx;
+  color: #969292;
+  
+
+}
+.top .up .head .float {
+  overflow: hidden;
+  margin-top: 36rpx;
+  font-size: 14px;
+  width: 750rpx;
+  height: 100rpx;
+
+
+}
+.top .up .float .dir{
+  float: left;
+  width: 300rpx;
+}
+.top .up .float .time{
+  float: left;
+  width: 238rpx;
+}
+.top .up .float button{
+  float: left;
+  width: 140rpx;
+  height: 40rpx;
+  font-size: 12px;
+  line-height:40rpx;
+  background-color: lightblue;
+  margin-left: 50rpx;
+}
+.top .up .head .price {
+  font-size: 14px;
+  color: #969292;
+}
+.top .up .head .title {
+  font-size: 20px;
+  color: rgb(10, 10, 10);
+
+}
+.top .content {
+  overflow: hidden;
+}
+.stations_info {
+  display: flex;
+  float: left;
+  width: 750rpx;
+  background: #efefef;
+  text-align: centert;
+  line-height: 150rpx;
+  position: relative;
+  padding-left: 20px;
+}
+
+.stations_info .stations_info_d {
+  border: 1px solid #ccc;
+  border-left-width: 0px;
+  
+  width: 700rpx;
+}
+
+.stations_info  .stations_info_img {
+  margin-right: 9px;
+  position: absolute;
+  top: -80rpx;
+  left: 8rpx;
+}
+.top .down {
+  margin-top: 38rpx;
+}
+.top .down .right {
+  width: 750rpx;
+
+}
+
+.down .content view {
+  font-size: 18px;
+  color: #050505;
+  height: 100rpx;
+  
+}
+.down .content {
+  position: relative;
+}
+
+.top .content .right image {
+  width: 20rpx;
+  height: 150rpx;
+  overflow: visible;
+}
+

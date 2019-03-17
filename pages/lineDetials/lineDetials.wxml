@@ -1,0 +1,23 @@
+<view class='top'>
+  <view class="up">
+    <view class="head">
+      <view class="title">{{lineData.lineName}}</view>
+      <view class="float">
+        <view class="dir">{{lineData.direction}}</view>
+        <view class="time">{{lineData.startTime}}{{lineData.endTime}}</view>
+        <button>收藏</button>
+      </view>
+        <view class="price">票价{{lineData.price}}--{{lineData.max_price}}元       </view>
+    </view>
+  </view>
+  <view class="down">
+    <view class="content">
+      <view class="right">
+        <view class='stations_info' wx:for='{{lineData.stationArr}}' wx:key='{{index}}' scroll-y>
+          <view class="stations_info_img"><image src="/img/circle.png" ></image></view>
+          <view class="stations_info_d">{{item}}</view>
+       </view>
+      </view>
+    </view>
+  </view>
+</view>

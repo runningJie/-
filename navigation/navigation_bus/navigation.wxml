@@ -1,0 +1,43 @@
+<wxs module='numFr' src='../../filter/numFr.wxs'></wxs>
+
+<view class='title states_bus'><image src='../../img/startPos2.png'></image>{{start}}</view>
+<view class='altogether title_'>
+  <text>总距离: {{route.distance}}米</text>
+  <text>预计打车费用: {{taxi_cost}}￥</text>
+</view>
+<view wx:for="{{transits}}" wx:key='{{this}}' wx:for-item="source" class='plan' wx:for-index="transits_index">
+  <view class='altogether_plan'>
+    <text>方案{{transits_index + 1}} 需{{source.cost}}￥</text>
+    <text>需时{{numFr.getNum(source.duration / 60)}} 分钟</text>
+  </view>
+  <view wx:for="{{source.segments}}" wx:key='{{this}}' wx:for-item="info" class='station' wx:for-index='suoyin' >
+    <view catchtap='details_xq' data-num='{{suoyin}}' data-id='{{transits_index}}' data-busLine='{{info.bus.buslines}}' class="{{buslinelength === 0 ? 'hide' : 'show'}}">
+      <!-- 每一站 -->
+      <view wx:for="{{info.bus.buslines}}" wx:key='{{this}}' wx:for-item="zhan" >
+        <view class='altogether_zhan' >
+          <text class='look'>{{zhan.name}}</text>
+        </view>
+        <view  class="{{(_num === suoyin && _id === transits_index)  ? 'show' : 'hide' }} class='buslines'" >
+          <view class='row-height'>上车站点：<text>{{zhan.departure_stop.name}}</text></view>
+          <view class='row-height'>下车站点：<text>{{zhan.arrival_stop.name}}</text></view>
+          <view class='row-height ' catchtap='show'>
+            <text>查看公交经过的站点</text>
+            <view wx:for="{{zhan.via_stops}}" wx:key='{{this}}' >
+              <view class='row-height bus_station' wx:if='{{buffer}}'>{{index + 1}}：{{item.name}}</view>
+            </view>
+          </view>
+        
+        </view>
+
+
+        
+      </view>
+
+    </view>
+
+
+  </view>
+</view>
+<view class='title row-height bottom'><image src='../../img/endPos.png'></image>{{end}}</view>
+
+ <view bindtap="backIndex" class="back_index">返回首页</view>

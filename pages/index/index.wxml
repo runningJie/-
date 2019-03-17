@@ -1,0 +1,97 @@
+<!-- top -->
+<view class='top'>
+	<!-- 当前定位 -->
+	<view class='location'>
+		<!-- 图标 -->
+		<view class='icon iconfont icon-location'></view>
+		<view class="city">{{myLocation}}</view>
+	</view>
+
+  <!-- 搜索框: -->
+  <view class='searchInput'>
+    <view>
+      <!-- 注意：绑定bindfocus时候，莫名的触发次事件 -->
+      <!--      绑定bindtouchstart解决-->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <input class='search_input' value='{{inputValue}}' style="font-size:12px" placeholder='搜索公交线路、站台'
+      bindtouchstart='searchLineStation' bind=''></input>
+    </view>
+  </view>
+</view>
+
+<!-- 内容 -->
+<view class='content'>
+	<!-- 最近站台信息展示 -->
+	<view wx:if='{{nearestStation}}'>
+		<view class='nearestStationList' catchtap='showOrhide'>
+			<!-- 图标显示、名称，距离 -->
+			<view class='nearestStationList_info'>
+				<view class='nearestStationList_icon iconfont icon-zhandian '></view>
+				<view class='nearestStationList_name'>{{nearestStation.name}}</view>
+			</view>
+			<view class='nearestStationList_distance'>{{nearestStation.distance}}米</view>
+		</view>
+
+		<!-- 最近的一班公交    绑定事件：showLineDetail -->
+		<view class='lineList' data-index='{{index}}' wx:key='{{index}}' wx:for='{{lineDetailArr}}' catchtap='showLineDetail'
+		 wx:if='{{nearestLine_showOrhide}}'>
+			<!-- 名字 -->
+			<view class='line_name'><text>{{item.lineName}}</text></view>
+			<!-- bus_img -->
+			<!-- <view style='width:40px;position:absolute; right: 400rpx;transform: translateX({{animation}}px);'>
+				<image class='img_animate' src="/img/bus.png"></image>
+			</view> -->
+			<!-- 票价 、、方向-->
+			<view class='line_price'>票价{{item.price}}--{{item.max_price}}元</view>
+			<view class='line_direction'>{{item.direction}}</view>
+			<view class='runTime'>{{item.startTime}}{{item.endTime}}</view>
+		</view>
+	</view>
+
+	<!-- 其他站台信息 -->
+	<view wx:if='otherStation'>
+		<view class='otherStationList' wx:key='{{first_index}}' wx:for='{{otherStation}}' wx:for-item='firstData'
+		 wx:for-index='first_index' data-longitude='{{firstData.longitude}}' data-latitude='{{firstData.latitude}}' data-ids='{{firstData.id}}'>
+
+			<!-- 绑定点击隐藏事件 -->
+			<view class='nearestStationList_info otherStationList_info' catchtap='other_showOrhide' data-num='{{first_index}}'>
+				<view class='nearestStationList_icon iconfont icon-zhandian'></view>
+				<view class='nearestStationList_name'>{{firstData.name}}</view>
+				<view class='otherStationList_distance'>{{firstData.distance}}米</view>
+			</view>
+
+			<!-- 遍历otherItems -->
+			<view wx:key="{{index}}" wx:for="{{firstData.otherItems}}" data-father-index='{{first_index}}' data-index='{{index}}'
+			 class="otherStationList_items {{_num ===  first_index ? 'show' : 'hide'}} " catchtap='showOtherLineDetail'>
+				<view class='other_name_list'>
+					<!-- 名字 -->
+					<view class='other_name'>{{item.lineName}}</view>
+				</view>
+
+				<view>
+					<!-- 票价 -->
+					<view class='other_price'>票价{{item.price}}--{{item.max_price}}</view>
+				</view>
+				<view>
+					<!-- 方向 -->
+					<view class='other_direction'>{{item.direction}}</view>
+				</view>
+				<view class='runTime'>{{item.startTime}}{{item.endTime}}</view>
+			</view>
+		</view>
+
+	</view>
+</view>
+<!-- 刷新按钮 -->
+
+
+<view   class="view" style=" bottom:60rpx;left:325rpx;margin: 0rpx auto;" bindtap='reload'>
+  <view>
+  	<!-- 图标 -->
+		<view class=' iconfont icon-shuaxin' style='color:lightblue; font-size:40px;'></view>
+  </view>
+</view>
+

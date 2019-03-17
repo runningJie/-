@@ -1,0 +1,26 @@
+<!--pages/weather/weather.wxml-->
+<view class="app">
+  <!-- 地址 -->
+  <view class="address">
+  <image src='/img/address.png' mode='widthFix' style='width:40rpx'></image>
+  {{info.liveData.province}}市{{info.liveData.city}}
+  </view>
+  <!-- 温度 -->
+  <view class="temperature">{{info.temperature.data}}°</view>
+
+  <view class="min">
+     <!-- 天气 -->
+     <view class="weather">
+     <image src='/img/weather.png' mode='widthFix' style='width:40rpx'></image>
+     {{info.weather.data}}天
+     </view>
+      <!-- 湿度 -->
+      <view class="humidity"><image src='/img/humidity.png' mode='widthFix' style='width:40rpx'></image> {{info.humidity.data}}</view>
+      <!-- 风向 -->
+      <view class="winddirection"><image src='/img/winddirection.png' mode='widthFix' style='width:40rpx'></image> {{info.winddirection.data}} </view>
+      <!-- 风力 -->
+     <view class="windpower"><image src='/img/windpower.png' mode='widthFix' style='width:40rpx'></image>
+     {{info.windpower.data}}
+     </view>
+  </view>
+</view>

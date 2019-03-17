@@ -1,0 +1,40 @@
+.app {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #4D8AD7;
+  color: #fff;
+  font-size: 18px;
+  padding-top: 60rpx;
+  box-sizing: border-box;
+}
+  .address {
+    margin-bottom: 100rpx;
+  }
+  .temperature {
+    width: 400rpx;
+    height: 400rpx;
+    line-height: 400rpx;
+    font-weight: bold; 
+    margin: 0 auto;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20rpx;
+    border: 2rpx solid #fff;
+    border-radius: 50%;
+  }
+  .min {
+ 		width: 100%;
+ 		margin: 50rpx auto;
+    box-sizing: border-box; 
+    overflow: hidden;
+
+ }
+ 	.weather, .winddirection, .humidity, .windpower {
+     margin-bottom: 40rpx;
+ 		text-align: center;
+ 		width: 50%;
+ 		float: left;
+ 	} 

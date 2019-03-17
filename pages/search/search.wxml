@@ -1,0 +1,36 @@
+<!--pages/search/search.wxml-->
+<!-- 搜索公交站点 -->
+<!-- <view id="search">
+  <icon type='search' size="12"></icon>
+  <view bindtap='searchRound'>搜索公交路线、站台</view>
+</view> -->
+<!-- 路线规划 -->
+<view id="box">
+  <view class="weizhi">
+   <view class="quan">
+      <image src='../../img/red-green.png' ></image>
+    </view>
+    <!-- 起始位置 -->
+    <input id="start" bindinput='inputInfo' bindtap='focus1' data-location1='{{location1}}' type='text' value='{{val1}}' placeholder='输入起点' maxlength='40' focus='true' selection-start='0' selection-selection-end='3'></input>
+    <!-- 终止位置 -->
+    <input id="end" bindinput='inputInfo' bindtap='focus2' data-location2='{{location2}}' type='text' value='{{val2}}' placeholder='输入终点' maxlength='40'></input>
+    <!-- 位置交换 -->
+    <view id="zhuan" bindtap='exchange'>
+      <image src='../../img/jiaohuan.png' ></image>
+    </view>
+  </view>
+  <!-- 规划开始 -->
+  <view hover-class='btns' class='btn'>
+    <button id="go" catchtap='planning'>开始规划</button>
+  </view>
+</view>
+<!-- 地址信息提示 -->
+<scroll-view scroll-y style='height: {{height}}px; width: {{width}}px'>
+  <view catchtap='endName' class="tipInfo" wx:for="{{tips}}" wx:key="{{this}}" data-location='{{item.location}}'>
+    <view class="backInfo">
+      <text class='name'>{{item.name}}</text>
+      <text class='district'> · {{item.district}}</text>
+    </view>
+    <view class="address">{{item.address}}</view>
+  </view>
+</scroll-view>

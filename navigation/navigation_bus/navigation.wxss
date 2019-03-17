@@ -1,0 +1,132 @@
+page {
+  background-color: #efefef;
+}
+view{
+  font-size: 30rpx;
+  color: #333;
+}
+states_bus {
+  height: 50rpx;
+  line-height: 50rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #fff;
+}
+.row-height{
+  line-height: 50rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.altogether {
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx 20rpx;
+  padding: 0 30rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+.altogether text {
+  font-size: 13px;
+}
+/* 总需 */
+.altogether_plan {
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0rpx 20rpx;
+  margin-top: 30rpx;
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+.altogether_plan text {
+  font-size: 16px;
+}
+
+/* 方案路线 */
+
+.altogether_zhan {
+  height: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 10px;
+  padding: 0 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #fff;
+}
+.altogether_zhan text {
+  font-size: 14px;
+}
+.way{
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 20rpx 40rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #fff;
+}
+.buslines{
+  color: #999;
+  margin: 0 20rpx;
+  font-size: 13px;
+  padding: 40rpx 60rpx;
+  background-color: #fff;
+}
+
+.lxxq{
+  color: #4875fd;
+}
+.look{
+  color: #9b0511;
+}
+.bus_station { 
+  padding-left: 90rpx
+}
+
+.title{   
+    margin-top: 6rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    line-height: 70rpx;
+  }
+.title image{
+  width:44rpx;
+  height:47rpx;
+  margin-right:10rpx;
+  vertical-align: middle;
+  line-height: 47rpx
+}
+.title_{
+  text-align:center;
+  font-size:40rpx;
+  line-height: 70rpx
+}
+
+.bottom{
+  margin-bottom: 100rpx
+}
+.back_index {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 97rpx;
+      line-height: 97rpx;
+      color: #4875fd;
+      text-align: center;
+      background-color: #ffffff;
+      border-top: 1rpx solid #e5e5e5;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
